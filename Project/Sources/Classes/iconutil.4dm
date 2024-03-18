@@ -2,7 +2,7 @@ Class extends _CLI
 
 Class constructor($controller : 4D:C1709.Class)
 	
-	Super:C1705("go-png2ico"; $controller)
+	Super:C1705("iconutil"; $controller)
 	
 Function onResponse($files : Collection; $parameters : Collection)
 	
@@ -38,7 +38,7 @@ Function terminate()
 	
 	This:C1470.controller.terminate()
 	
-Function convert($option : Variant)->$this : cs:C1710.png2ico
+Function convert($option : Variant)->$this : cs:C1710.iconutil
 	
 	$this:=This:C1470
 	
@@ -47,7 +47,7 @@ Function convert($option : Variant)->$this : cs:C1710.png2ico
 	
 	Case of 
 		: (Value type:C1509($option)=Is object:K8:27)
-			$options:=[$option]
+			$options:=New collection:C1472($option)
 		: (Value type:C1509($option)=Is collection:K8:32)
 			$options:=$option
 	End case 
@@ -77,7 +77,7 @@ Function convert($option : Variant)->$this : cs:C1710.png2ico
 						$sources:=$files
 					: (OB Instance of:C1731($source; 4D:C1709.File))
 						If ($source.extension=".png")
-							$sources:=[$source]
+							$sources:=New collection:C1472($source)
 						End if 
 				End case 
 			: (Value type:C1509($option.src)=Is collection:K8:32)
@@ -85,7 +85,7 @@ Function convert($option : Variant)->$this : cs:C1710.png2ico
 					If (OB Instance of:C1731($source; 4D:C1709.File))
 						If ($source.extension=".png")
 							If ($sources=Null:C1517)
-								$sources:=[$source]
+								$sources:=New collection:C1472($source)
 							Else 
 								$sources.push($source)
 							End if 
@@ -99,17 +99,23 @@ Function convert($option : Variant)->$this : cs:C1710.png2ico
 /*
 resolve filesystem path
 */
-				$output:=Folder:C1567($option.dst.platformPath; fk platform path:K87:2).file($sources[0].parent.name+".ico")
+				$output:=Folder:C1567($option.dst.platformPath; fk platform path:K87:2).file($sources[0].parent.name+".icns")
 				$output.parent.create()
 				
 				$command:=This:C1470.escape(This:C1470.executablePath)
+				$command:=$command+" -c icns "  //convert
+				
+				$iconsetFolder:=Folder:C1567(Temporary folder:C486; fk platform path:K87:2).folder(Generate UUID:C1066).folder($output.name+".iconset")
+				$iconsetFolder.create()
+				
+				$command:=$command+This:C1470.escape($iconsetFolder.path)
 				
 				For each ($src; $sources)
 					$input:=File:C1566($src.platformPath; fk platform path:K87:2)
-					$command:=$command+" "+This:C1470.quote($input.path)
+					$input.copyTo($iconsetFolder)
 				End for each 
 				
-				$command:=$command+" "+This:C1470.quote($output.path)
+				$command:=$command+" -o "+This:C1470.escape($output.path)
 				$commands.push($command)
 				
 		End case 

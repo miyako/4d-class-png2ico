@@ -2,12 +2,15 @@
 	"CLI": {
 		"classes": [
 			"_CLI",
+			"iconutil",
 			"png2ico"
 		]
 	},
 	"Controller": {
 		"classes": [
 			"_CLI_Controller",
+			"_iconutil_Controller",
+			"_iconutilUI_Controller",
 			"_png2ico_Controller",
 			"_png2icoUI_Controller"
 		]

@@ -10,10 +10,12 @@ Else
 	$PROJECT:=File:C1566(Structure file:C489; fk platform path:K87:2).name
 	
 	$src:=Folder:C1567(Folder:C1567("/PROJECT/").platformPath; fk platform path:K87:2).parent.folder("Samples/windows")
-	$dst:=Folder:C1567(fk desktop folder:K87:19).file($PROJECT+".ico")
+	$dst:=Folder:C1567(fk desktop folder:K87:19)
 	
 	$png2ico:=cs:C1710.png2ico.new(cs:C1710._png2ico_Controller)
+	$iconutil:=cs:C1710.iconutil.new(cs:C1710._iconutil_Controller)
 	
 	$png2ico.convert({src: $src; dst: $dst})
+	$iconutil.convert({src: $src; dst: $dst})
 	
 End if 

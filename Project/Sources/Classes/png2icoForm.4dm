@@ -14,37 +14,28 @@ Class constructor
 Function onLoad()
 	
 	Form:C1466.png2ico:=cs:C1710.png2ico.new(cs:C1710._png2icoUI_Controller)
+	Form:C1466.iconutil:=cs:C1710.iconutil.new(cs:C1710._iconutilUI_Controller)
 	
-	Form:C1466.toggleButtons().isProcessing(False:C215)
+	Form:C1466.toggleButtons()
 	
 Function onUnload()
 	
 	Form:C1466.png2ico.terminate()
+	Form:C1466.iconutil.terminate()
 	
 Function convert($src : Object)
 	
 	OBJECT SET ENABLED:C1123(*; "Convert"; False:C215)
 	
-	Form:C1466.isProcessing(True:C214)
-	
 	$PROJECT:=File:C1566(Structure file:C489; fk platform path:K87:2).name
 	
 	$src:=Form:C1466.source
-	$dst:=Folder:C1567(fk desktop folder:K87:19).file($PROJECT+".ico")
+	$dst:=Folder:C1567(fk desktop folder:K87:19)
 	
+	Form:C1466.iconutil.convert({src: $src; dst: $dst})
 	Form:C1466.png2ico.convert({src: $src; dst: $dst})
 	
 	return Form:C1466
-	
-Function isProcessing($flag : Boolean)
-	
-	OBJECT SET ENABLED:C1123(*; "Stop"; $flag)
-	
-	return Form:C1466
-	
-Function abort()
-	
-	Form:C1466.isProcessing(False:C215).toggleButtons().png2ico.terminate()
 	
 Function toggleButtons()
 	

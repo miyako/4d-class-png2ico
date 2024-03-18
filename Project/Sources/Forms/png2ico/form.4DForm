@@ -55,21 +55,6 @@
 					"sizingY": "move",
 					"sizingX": "grow"
 				},
-				"Stop": {
-					"type": "button",
-					"text": "Stop",
-					"top": 140,
-					"left": 10,
-					"width": 150,
-					"height": 53,
-					"events": [
-						"onClick"
-					],
-					"method": "ObjectMethods/Stop.4dm",
-					"focusable": false,
-					"sizingX": "fixed",
-					"sizingY": "move"
-				},
 				"Convert": {
 					"type": "button",
 					"text": "Convert",
@@ -153,7 +138,7 @@
 		}
 	],
 	"method": "method.4dm",
-	"geometryStamp": 707,
+	"geometryStamp": 708,
 	"editor": {
 		"activeView": "View 1",
 		"defaultView": "View 1",
