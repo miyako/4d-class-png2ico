@@ -1,0 +1,25 @@
+{
+	"CLI": {
+		"classes": [
+			"_CLI",
+			"png2ico"
+		]
+	},
+	"Controller": {
+		"classes": [
+			"_CLI_Controller",
+			"_png2ico_Controller",
+			"_png2icoUI_Controller"
+		]
+	},
+	"Form": {
+		"forms": [
+			"png2ico"
+		],
+		"classes": [
+			"_Form",
+			"png2icoForm"
+		]
+	},
+	"trash": {}
+}

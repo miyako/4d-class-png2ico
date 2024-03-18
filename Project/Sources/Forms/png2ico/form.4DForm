@@ -1,0 +1,166 @@
+{
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"windowSizingX": "variable",
+	"windowSizingY": "variable",
+	"windowMinWidth": 622,
+	"windowMinHeight": 203,
+	"windowMaxWidth": 32767,
+	"windowMaxHeight": 32767,
+	"events": [
+		"onLoad",
+		"onUnload"
+	],
+	"windowTitle": "",
+	"destination": "detailScreen",
+	"pages": [
+		{
+			"objects": {}
+		},
+		{
+			"objects": {
+				"Form.sourceIcon": {
+					"type": "input",
+					"left": 10,
+					"top": 14,
+					"width": 100,
+					"height": 100,
+					"dataSource": "Form:C1466.sourceIcon",
+					"contextMenu": "none",
+					"events": [
+						"onDrop"
+					],
+					"dropping": "custom",
+					"dragging": "none",
+					"method": "ObjectMethods/Form.sourceIcon.4dm",
+					"dataSourceTypeHint": "picture",
+					"pictureFormat": "proportionalCenter",
+					"hideFocusRing": true,
+					"borderStyle": "none"
+				},
+				"Path": {
+					"type": "input",
+					"left": 253,
+					"top": 77,
+					"width": 414,
+					"height": 17,
+					"enterable": false,
+					"focusable": false,
+					"dataSource": "Form:C1466.source.path",
+					"contextMenu": "none",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"sizingY": "move",
+					"sizingX": "grow"
+				},
+				"Stop": {
+					"type": "button",
+					"text": "Stop",
+					"top": 140,
+					"left": 10,
+					"width": 150,
+					"height": 53,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Stop.4dm",
+					"focusable": false,
+					"sizingX": "fixed",
+					"sizingY": "move"
+				},
+				"Convert": {
+					"type": "button",
+					"text": "Convert",
+					"top": 140,
+					"left": 462,
+					"width": 150,
+					"height": 53,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Convert.4dm",
+					"focusable": false,
+					"sizingX": "move",
+					"sizingY": "move"
+				},
+				"path:": {
+					"type": "text",
+					"text": "path:",
+					"top": 78,
+					"left": 183,
+					"width": 63,
+					"height": 16,
+					"textAlign": "right",
+					"fontWeight": "bold",
+					"sizingY": "move",
+					"sizingX": "fixed"
+				}
+			}
+		},
+		{
+			"objects": {
+				"Form.stdOut": {
+					"type": "input",
+					"left": 258,
+					"top": 41,
+					"width": 354,
+					"height": 81,
+					"enterable": false,
+					"focusable": false,
+					"fill": "transparent",
+					"dataSource": "Form:C1466.stdOut",
+					"sizingX": "grow",
+					"sizingY": "grow"
+				},
+				"Form.stdErr": {
+					"type": "input",
+					"left": 258,
+					"top": 131,
+					"width": 354,
+					"height": 81,
+					"enterable": false,
+					"focusable": false,
+					"fill": "transparent",
+					"dataSource": "Form:C1466.stdErr",
+					"sizingY": "move",
+					"sizingX": "grow"
+				},
+				"stdOut:": {
+					"type": "text",
+					"text": "stdOut:",
+					"top": 38,
+					"left": 163,
+					"width": 83,
+					"height": 16,
+					"textAlign": "right",
+					"fontWeight": "bold"
+				},
+				"stdErr:": {
+					"type": "text",
+					"text": "stdErr:",
+					"top": 128,
+					"left": 163,
+					"width": 83,
+					"height": 16,
+					"textAlign": "right",
+					"fontWeight": "bold",
+					"sizingY": "move",
+					"sizingX": "fixed"
+				}
+			}
+		}
+	],
+	"method": "method.4dm",
+	"geometryStamp": 707,
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	},
+	"width": 622,
+	"height": 203
+}
