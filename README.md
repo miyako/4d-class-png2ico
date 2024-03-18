@@ -1,5 +1,3 @@
-![icon_1024x1024](https://github.com/miyako/4d-class-png2ico/assets/1725068/a807103e-36db-4c92-8801-58650c6bb60b)Classes to generate .ico from .png.
-
 Source folder should contain .png files named accroding to `iconutil` format. i.e.
 
 * icon_1024x1024.png
