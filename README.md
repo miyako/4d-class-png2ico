@@ -1,2 +1,5 @@
-# 4d-class-png2ico
-Classes to generate .ico from .png
+Classes to generate .ico from .png.
+
+# Acknowledgements
+
+* [J-Siu/go-png2ico](https://github.com/J-Siu/go-png2ico)
